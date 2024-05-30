@@ -30,7 +30,7 @@ class Panier {
     ajoutProduit(prod, qte){
         const produit = new ProduitPanier(prod, qte)
         this.produits.push(produit)
-        this.prixTotal += 
+        this.prixTotal += prod.prix * qte
     }
 
     supprimerProduit(id){
@@ -44,7 +44,7 @@ class Panier {
     }
 
     aficherPrixTotalPanier(){
-
+        console.log(`Prix total du panier : ${this.prixTotal}`);
     }
 }
 
@@ -58,8 +58,10 @@ panier.ajoutProduit(p2, 2)
 
 console.log('Produits dans le panier :')
 panier.afficherProduits()
+panier.aficherPrixTotalPanier()
 
 panier.supprimerProduit(1)
 console.log('Produits dans le panier apres la suppression:')
 panier.afficherProduits()
+panier.aficherPrixTotalPanier()
 
